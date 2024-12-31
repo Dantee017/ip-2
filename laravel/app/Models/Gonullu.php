@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Gonullu extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'ad',
+        'iletisim_bilgisi',
+        'yetenekler',
+    ];
+
+    public function etkinlikGonulluler()
+    {
+        return $this->hasMany(EtkinlikGonullu::class);
+    }
 }

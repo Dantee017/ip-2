@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Organizator extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'name',
-        'email',
+        'ad',
+        'iletisim_bilgisi',
     ];
 
     public function etkinlikler()
     {
-        return $this->hasMany(etkinlikler::class);
+        return $this->hasMany(Etkinlik::class);
     }
 }

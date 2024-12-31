@@ -10,7 +10,13 @@ class Sponsor extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'ad',
+        'iletisim_bilgisi',
+        'katki_miktari',
+    ];
 
-    ]
+    public function etkinlikSponsorlar()
+    {
+        return $this->hasMany(EtkinlikSponsor::class);
+    }
 }

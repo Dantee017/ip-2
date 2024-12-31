@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class EtkinlikCizelgesi extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'etkinlik_id',
+        'aktivite_adi',
+        'baslangic_saati',
+        'bitis_saati',
+    ];
+
+    public function etkinlik()
+    {
+        return $this->belongsTo(Etkinlik::class);
+    }
 }
